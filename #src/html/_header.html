@@ -6,12 +6,19 @@
          </div>
          <div class="header__menu">
             <button class="header__menu-singin">ВОЙТИ</button>
-            <button class="header__menu-singup">РЕГИСТРАЦИЯ</button>
+            <div class="button-container-2">
+               <span class="mas__reg">РЕГИСТРАЦИЯ</span>
+               <button type="button" name="Hover">РЕГИСТРАЦИЯ</button>
+            </div>
             <div class="icon-menu"><span></span></div>
          </div>
       </div>
       <div class="header__content">
-         <div class="header__content-text">Ваш лучший способ шопинга: Найдите идеальный наряд за считанные минуты!</div>
+         <div class="header__content-wrapper">
+            <div class="header__content-text sliders">Ваш лучший способ шопинга: Найдите идеальный наряд за считанные минуты!</div>
+            <div class="header__content-text2 sliders">Подчеркивание скорости и выбора. Сосредоточьтесь на удобном сравнении</div>
+            <div class="header__content-text3 sliders">Остановите бесконечный поиск. Найдите, сравните и сэкономьте</div>
+         </div>
          <form class="header__content-input" action="">
             <input placeholder="ПОИСК" type="text" class="header__content-search">
             <!-- <div class="header__content-category">КАТЕГОРИЯ</div> -->
@@ -23,6 +30,8 @@
       </div>
    </div>
    <div class="header__bg">
-      <img src="@img/header.svg" alt="">
+      <!-- <img src="@img/header.svg" alt=""> -->
+      <canvas class="header__wave"></canvas>
    </div>
+   
 </header>

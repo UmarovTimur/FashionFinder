@@ -36,7 +36,7 @@
 
 	&__menu-singin {
 		color: var(--color-text);
-		font-size: 20px;
+		font-size: 32px;
 		font-weight: bold;
 
 		@media screen and (max-width:$mobile) {
@@ -47,7 +47,7 @@
 	&__menu-singup {
 		color: var(--color-white);
 		background-color: var(--color-text);
-		font-size: 20px;
+		font-size: 24px;
 		padding: em(11, 16) em(51, 16);
 
 		@media screen and (max-width:$mobile) {
@@ -72,13 +72,40 @@
 		@include adaptiveValue('margin-top', 130, 50);
 
 	}
-
+	&__content-wrapper{
+		height: 200px;
+	}
 	&__content-text {
 		color: var(--color-text);
 		@include adaptiveValue('font-size', 96, 32);
 		font-weight: bold;
 		text-align: center;
+		position: absolute;
+		opacity: 1;
+		max-width: 1300px;
+		transition: ease-in 0.3s;
 	}
+	&__content-text2{
+		opacity: 0;
+		color: var(--color-text);
+		@include adaptiveValue('font-size', 96, 32);
+		font-weight: bold;
+		text-align: center;
+		position: absolute;
+		max-width: 1300px;
+		transition: ease-in 0.3s;
+	}
+	&__content-text3{
+		opacity: 0;
+		color: var(--color-text);
+		@include adaptiveValue('font-size', 96, 32);
+		font-weight: bold;
+		text-align: center;
+		position: absolute;
+		max-width: 1300px;
+		transition: ease-in 0.3s;
+	}
+	
 
 	&__content-input {
 		display: flex;
@@ -199,22 +226,6 @@
 	color: $col;
 }
 
-
-
-
-.mas {
-	position: absolute;
-	color: var(--color-text);
-	text-align: center;
-	width: 101%;
-	font-weight: 300;
-	position: absolute;
-	font-size: 32px;
-	margin-top: 12px;
-	overflow: hidden;
-	font-weight: bold;
-}
-
 @keyframes ani {
 	from {
 		-webkit-mask-position: 0 0;
@@ -242,6 +253,25 @@
 a {
 	color: #00ff95;
 }
+
+
+
+// SEARCH
+
+.mas {
+	position: absolute;
+	color: var(--color-text);
+	text-align: center;
+	width: 101%;
+	font-weight: 300;
+	position: absolute;
+	font-size: 32px;
+	margin-top: 12px;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+
 
 .button-container-3 {
 	position: relative;
@@ -277,7 +307,72 @@ a {
 	}
 }
 
+
+
+// REGISTER
+
+
+
+.mas__reg {
+	position: absolute;
+	color: var(--color-text);
+	text-align: center;
+	width: 101%;
+	font-weight: 300;
+	position: absolute;
+	font-size: 32px;
+	margin-top: 5px;
+	overflow: hidden;
+	font-weight: bold;
+}
+
+.button-container-2 {
+	position: relative;
+	width: 240px;
+	height: 50px;
+	overflow: hidden;
+	border: 3px solid var(--color-text);
+	transition: 0.3s;
+	border-radius: 15px;
+
+
+
+	button {
+		width: 101%;
+		height: 100%;
+		font-weight: 300;
+		font-size: 32px;
+		font-weight: bold;
+
+
+
+		@include button(var(--color-text), "https://raw.githubusercontent.com/pizza3/asset/master/natureSmaller.png",
+			7100%,
+			100%,
+			none,
+			var(--color-white));
+		cursor: pointer;
+		animation: ani2 0.5s steps(70) forwards;
+
+		&:hover {
+			animation: ani 0.5s steps(70) forwards;
+		}
+	}
+}
+
+
+
 //====================================================================================================
+
+.header__wave{
+	position: absolute;
+	top: 65%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transform: rotate(-180deg);
+}
 
 //Burger
 

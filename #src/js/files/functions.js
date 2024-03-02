@@ -631,4 +631,93 @@ export function dataMediaQueries(array, dataSetValue) {
       }
    }
 }
+
+
+
+export function wave(selector) {
+   const cnv = document.querySelector(selector);
+   const ctx = cnv.getContext('2d');
+   //let centerX = cnv.width / 2;
+   let centerY = cnv.height / 2;
+   let waveAmplitude = 1;
+   let speed = 25;
+   let waveHeight = cnv.width / 30;
+   let waveLenght = 2.5;
+   let waveColor = '#FEECE2'; 
+   //let iterationWave
+
+
+
+
+
+
+
+   function init() {
+      cnv.width = innerWidth;
+      cnv.height = 100;
+      waveHeight = cnv.width / 20;
+      //centerX = cnv.width / 2;
+      centerY = cnv.height / 2;
+   }
+   init();
+   function updateRings() {
+      drawRing();
+      waveHeight = cnv.width / 30;
+
+      //waveAmplitude >= 360 ? waveAmplitude = 1 : waveAmplitude++;
+      waveAmplitude >= 60 * speed + 10 ? waveAmplitude = 1 : waveAmplitude++;
+   }
+   function drawRing() {
+      ctx.strokeStyle = waveColor;
+      ctx.lineWidth = 5;
+
+      ctx.beginPath();
+      ctx.moveTo(0, centerY);
+
+      for (let j = 0; j < cnv.width / waveLenght; j++) {
+         let currentAngel = j * Math.PI / 180;
+         let x = j * waveLenght;
+         let y = centerY + Math.sin(currentAngel + waveAmplitude / speed / 10) * j / waveHeight
+         ctx.lineTo(x, y);
+      }
+      //заливка
+      ctx.lineTo(cnv.width, cnv.height);
+      ctx.lineTo(0, cnv.height);
+      ctx.lineTo(0, centerY);
+      ctx.fillStyle = waveColor;
+      ctx.fill();
+      ctx.stroke()
+   }
+   function loop() {
+      cnv.width |= 0;
+      updateRings();
+      drawRing();
+      requestAnimationFrame(loop);
+   }
+   loop();
+
+   window.addEventListener('resize', init);
+}
+
+
+
+// TIME_SLIDER
+
+export function timerText(){
+   var elements = document.querySelectorAll('.sliders');
+
+   var counter = 1;
+   setInterval(function(){  
+     for (var i = 0; i < elements.length; ++i) {
+       elements[i].style.opacity = '0';
+     }
+     if (counter > elements.length - 1)
+       counter = 0;
+     
+     elements[counter].style.opacity = '1';
+     counter++;      
+   }, 8000);
+}
+
+
 //================================================================================================================================================================================================================================================================================================================
